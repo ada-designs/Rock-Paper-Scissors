@@ -1,0 +1,583 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "Poppins";
+  font-weight: 600;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.flex h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 500;
+  align-self: center;
+}
+
+/* Primary colors */
+
+:root {
+  --btn-color: #ff0274; /* pink */
+  --green-color: #0aff02;
+  --black-color: #000;
+}
+
+.flex {
+  display: flex;
+}
+
+/* Container */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+
+/* Start screen */
+
+.game-start {
+  align-self: center;
+  margin-top: 150px;
+  width: 50%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.form {
+  width: 400px;
+  padding-top: 10px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.p1 {
+  color: var(--btn-color);
+}
+
+.p2 {
+  color: var(--green-color);
+}
+
+.pic {
+  width: 150px;
+  height: 150px;
+}
+
+.rock {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  rotate: 20deg;
+}
+.scissors {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  rotate: 90deg;
+}
+
+.paper {
+  position: absolute;
+  bottom: 5%;
+  left: 45%;
+  rotate: 30deg;
+}
+
+/* Scores */
+
+.scores {
+  justify-content: space-between;
+  align-items: start;
+  position: absolute;
+  top: 20%;
+}
+
+.player-score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dynamic-title {
+  font-size: 50px;
+  font-weight: 800;
+}
+
+.number {
+  font-size: 52px;
+}
+
+.score--0 {
+  color: var(--btn-color);
+}
+
+.score--1 {
+  color: var(--green-color);
+}
+
+.score-p1,
+.score-p2 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+/* Scores */
+
+.buttons {
+  margin-top: 10%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.winnerbox {
+  display: flex;
+  flex: column;
+}
+
+.shake-items {
+  height: 500px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 100px;
+  z-index: 3;
+}
+
+.result-items {
+  height: 500px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 100px;
+  z-index: 2;
+}
+
+.choices-1 {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 100px;
+  z-index: 10;
+}
+
+.choices-2 {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 100px;
+}
+
+/* Pink box images */
+
+.pink-box {
+  transform: scaleX(-1);
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+  background-color: var(--btn-color);
+  z-index: 10;
+  transition: 0.5s;
+}
+
+.green-box {
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+  background-color: var(--green-color);
+  z-index: 10;
+  transition: 0.5s;
+}
+
+.white-box {
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+  background-color: #fff;
+  z-index: 0;
+}
+
+.transp-box1 {
+  transform: scaleX(-1);
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+  background-color: #ffffff00;
+  z-index: 0;
+}
+
+.pink-box:hover {
+  box-shadow: 0 8px 16px rgba(255, 0, 140, 0.447);
+}
+
+.green-box:hover {
+  box-shadow: 8px 8px 8px rgba(0, 255, 34, 0.447);
+}
+
+.transp-box2 {
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+  background-color: #fff;
+  z-index: 0;
+}
+
+/* .vs-result {
+  margin-right: -40px;
+} */
+
+/* BUTTONS--------- */
+
+.btn {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: lightgrey;
+  color: black;
+  font-size: 20px;
+  padding: 5px 30px;
+  border-radius: 5px;
+  max-width: 400px;
+  cursor: pointer;
+  border: none;
+  transition: background-image 0.8s ease, transform 0.3 ease;
+  z-index: 50;
+}
+
+.btn:hover {
+  background-color: rgba(211, 211, 211, 0.951);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+/*------ ANIMATIONS ----*/
+
+/* ---- ROTATION ---- */
+
+@keyframes rotateImage {
+  0% {
+    transform: rotate(60deg);
+  }
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+
+.animate {
+  animation: rotateImage 0.5s ease-in-out 3;
+}
+
+/* ----- FADE IN SLOW----- */
+
+@keyframes fadeInSlow {
+  0% {
+    opacity: 0%;
+  }
+
+  75% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in-slow {
+  animation: fadeInSlow 3s ease-in-out;
+}
+
+/* ----- FADE IN FAST----- */
+
+@keyframes fadeInFast {
+  0% {
+    opacity: 0%;
+  }
+
+  75% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in-fast {
+  animation: fadeInFast 1s ease-in-out;
+}
+
+/* Fade from up to down */
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0%;
+    transform: translateY(-30px);
+  }
+
+  75% {
+    opacity: 0%;
+    transform: translateY(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-down {
+  animation: fadeInDown 2s ease-in-out forwards;
+}
+
+/* Fade from down to up */
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0%;
+    transform: translateY(30px);
+    transform: translateX(-50%);
+  }
+
+  75% {
+    opacity: 0%;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    transform: translateX(-50%);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 4s ease-in-out forwards;
+}
+
+/* Media queries */
+
+@media (max-width: 1025px) {
+  .btn {
+    font-size: 40px;
+    padding: 10px 60px;
+  }
+  .choices-1,
+  .choices-2,
+  .shake-items,
+  .result-items {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .paper {
+    position: absolute;
+    bottom: 20%;
+    left: 45%;
+    rotate: 30deg;
+  }
+
+  .flex h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 940px) {
+  .pink-box img,
+  .green-box img,
+  .white-box img,
+  .transp-box1 img,
+  .transp-box2 img {
+    width: 120px;
+  }
+  .flex h1 {
+    font-size: 30px;
+  }
+
+  .rock,
+  .paper,
+  .scissors {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 700px) {
+  .pink-box img,
+  .green-box img,
+  .white-box img,
+  .transp-box1 img,
+  .transp-box2 img {
+    width: 100px;
+  }
+  .choices-1,
+  .choices-2,
+  .shake-items,
+  .result-items {
+    gap: 40px;
+  }
+
+  .score-p1,
+  .score-p2 {
+    font-size: 23px;
+  }
+  .score--0,
+  .score--1 {
+    font-size: 35px;
+  }
+
+  .dynamic-title {
+    font-size: 40px;
+  }
+  .btn {
+    font-size: 30px;
+    padding: 10px 50px;
+    bottom: 15%;
+  }
+
+  .rock,
+  .paper,
+  .scissors {
+    width: 80px;
+    height: 80px;
+  }
+
+  .flex h1 {
+    font-size: 25px;
+  }
+
+  .flex h2 {
+    font-size: 18px;
+  }
+
+  #player1,
+  #player2 {
+    width: 300px;
+    align-self: center;
+    padding-top: 10px;
+  }
+
+  .start {
+    width: 300px;
+    align-self: center;
+  }
+
+  .p1,
+  .p2 {
+    align-self: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .pink-box img,
+  .green-box img,
+  .white-box img,
+  .transp-box1 img,
+  .transp-box2 img {
+    width: 70px;
+  }
+
+  .flex h1 {
+    font-size: 20px;
+  }
+  .choices-1,
+  .choices-2,
+  .shake-items,
+  .result-items {
+    gap: 20px;
+  }
+  .dynamic-title {
+    margin-top: 20%;
+    font-size: 30px;
+  }
+  .score--0,
+  .score--1 {
+    font-size: 20px;
+  }
+
+  .btn {
+    font-size: 20px;
+    padding: 10px 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .rock,
+  .paper,
+  .scissors {
+    width: 60px;
+    height: 60px;
+  }
+  #player1,
+  #player2 {
+    width: 250px;
+    align-self: center;
+    padding-top: 10px;
+  }
+
+  .start {
+    width: 250px;
+    align-self: center;
+    margin-top: 20px;
+  }
+
+  .flex h1 {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .flex h2 {
+    font-size: 12px;
+  }
+}

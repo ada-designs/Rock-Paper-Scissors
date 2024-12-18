@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="images/scissors.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  <body>
+    <img src="images/rock.png" class="pic rock" />
+    <img src="images/paper.png" class="pic paper" />
+    <img src="images/scissors.png" class="pic scissors" />
+    <div class="flex game-start">
+      <h1>ROCK, PAPER, SCISSORS</h1>
+      <h2>Choose your names!</h2>
+      <div class="flex form">
+        <label class="p1">Player 1</label>
+        <input type="text" id="player1" />
+        <label class="p2">Player 2</label>
+        <input type="text" id="player2" />
+        <input type="submit" value="Start the game!" class="start" />
+      </div>
+    </div>
+    <main class="hidden">
+      <div class="container scores">
+        <div class="player-score1">
+          <p class="score-p1">Player 1:</p>
+          <span class="number score--0">0</span>
+        </div>
+        <p class="dynamic-title">Player 1's Turn</p>
+        <div class="player-score2">
+          <p class="score-p2">Player 2:</p>
+          <span class="number score--1">7</span>
+        </div>
+      </div>
+
+      <!-- <button class="btn play-again">Play again!</button> -->
+
+      <div class="choices-1 hidden">
+        <span class="pink-box rock1">
+          <img src="images/rock.png" />
+        </span>
+        <span class="pink-box paper1">
+          <img src="images/paper.png" />
+        </span>
+        <span class="pink-box scissors1">
+          <img src="images/scissors.png" />
+        </span>
+      </div>
+
+      <div class="choices-2">
+        <span class="green-box rock2">
+          <img src="images/rock.png" />
+        </span>
+        <span class="green-box paper2">
+          <img src="images/paper.png" />
+        </span>
+        <span class="green-box scissors2">
+          <img src="images/scissors.png" />
+        </span>
+      </div>
+
+      <div>
+        <div class="shake-items">
+          <span class="transp-box1 shake1 hidden">
+            <img src="images/rock.png" />
+          </span>
+          <span class="white-box vs-shake hidden">
+            <img src="images/vs.png" />
+          </span>
+          <span class="transp-box2 shake2 hidden">
+            <img src="images/rock.png" />
+          </span>
+        </div>
+
+        <div>
+          <div class="result-items">
+            <span class="pink-box winner1 hidden">
+              <img src="images/rock.png" />
+            </span>
+            <span class="white-box vs-result hidden">
+              <img src="images/vs.png" />
+            </span>
+            <span class="green-box winner2 hidden">
+              <img src="images/rock.png" />
+            </span>
+          </div>
+        </div>
+
+        <button class="btn next hidden">Next Round</button>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
